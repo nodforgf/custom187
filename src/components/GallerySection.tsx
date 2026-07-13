@@ -56,10 +56,10 @@ function PhotoCard({ photoUrl, idx, style, photoDate }: PhotoCardProps) {
           )}
 
           <div className="relative w-full h-full bg-[#fce4ec] overflow-hidden rounded-sm pointer-events-none">
-            {/* 🎯 จัดการรูป 1.jpeg ให้ชิดขวาสุดด้วย object-right */}
+            {/* 🎯 ปรับรูป 1.jpeg (idx === 0) ให้ขยับมาโฟกัสและเห็นฝั่งซ้ายสุดด้วย object-left เรียบร้อยครับ */}
             <img 
               src={photoUrl} 
-              className={`w-full h-full object-cover ${idx === 0 ? 'object-right' : 'object-center'}`} 
+              className={`w-full h-full object-cover ${idx === 0 ? 'object-left' : 'object-center'}`} 
               alt="Memory" 
             />
           </div>
@@ -87,7 +87,6 @@ function PhotoCard({ photoUrl, idx, style, photoDate }: PhotoCardProps) {
           style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
         >
           <span className="text-[#e8789a] mb-1 text-base flex-shrink-0">♥</span>
-          {/* 🎯 ปรับพื้นที่กล่องข้อความเพื่อแก้ปัญหาสระซ้อน/ข้อความหลุดจากการ์ดบน Mobile */}
           <div className="flex-1 w-full flex items-center justify-center overflow-y-auto px-1 custom-scrollbar" style={{ scrollbarWidth: 'none' }}>
             <p
               className="text-[#c2547a] font-bold text-center italic w-full break-all"
